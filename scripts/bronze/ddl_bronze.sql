@@ -12,6 +12,8 @@ Script Purpose:
 ==========================================================
 */
 
+USE DWH_Project;
+GO
 
 IF OBJECT_ID('bronze_cust_info', 'U') IS NOT NULL
 	DROP TABLE bronze.crm_cust_info;
@@ -62,10 +64,10 @@ CREATE TABLE bronze.crm_sales_details (
 GO
 
 IF OBJECT_ID('bronze.erp_loc_a101', 'U') IS NOT NULL
-    DROP TABLE bronze.erp_loc_a101;
+    DROP TABLE bronze.erp_local_a101;
 GO
 
-CREATE TABLE bronze.erp_loc_a101 (
+CREATE TABLE bronze.erp_local_a101 (
     cid    NVARCHAR(50),
     cntry  NVARCHAR(50)
 );
