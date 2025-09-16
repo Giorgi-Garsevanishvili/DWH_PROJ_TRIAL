@@ -1,3 +1,19 @@
+/*
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Stored Procedure: Load Bronze Layer (Source To --> Bronze Layer)
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Script Purpose:
+ This stored procedure loads data from CSV files.
+ It performs the following:
+	- Truncates tables before loading data.
+	- Uses the BULK INSERT command to insert data into the bronze layer from a CSV file.
+*/
+
+
+USE DWH_Project;
+GO
+
 CREATE OR ALTER PROCEDURE bronze.load_bronze AS
 BEGIN
 	DECLARE @start_time DATETIME, @end_time DATETIME, @batch_start_time DATETIME, @batch_end_time DATETIME
@@ -125,3 +141,5 @@ BEGIN
 		PRINT '=========================================='
 	END CATCH
 END
+GO
+EXEC bronze.load_bronze
